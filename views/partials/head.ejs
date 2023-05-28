@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Anuario Estudiantil</title>
+	<link rel="icon" href="imagenes/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+	<section class= "header m-2">
+		<nav>
+			<div class="navegacion">
+				<ul>
+					<li><a href="/agregar-proyecto">Agregar proyectos</a></li>
+            		<li><a href="/proyectos">Proyectos</a></li>
+					<li><a href="/registro-anuario">Registrar en Anuario</a></li>
+            		<li><a href="/alumnos">Anuario</a></li>
+					<li><a href="/logout">Cerrar Sesión</a></li>
+					<li>
+                        <form id="search" action="/buscar" method="GET" class="search-form">
+                            <input type="text" id="query" name="nombre" placeholder="Buscar...">
+                            <button type="submit">Buscar</button>
+                        </form>
+                    </li>
+				</ul>
+			</div>
+		</nav>
+	</section>

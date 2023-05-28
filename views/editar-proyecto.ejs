@@ -1,0 +1,39 @@
+<%- include('partials/head'); %>
+    <section class="position-relative">
+      <h1 class="m-3">Agregar Proyecto</h1>
+      <form  class="m-4" id="registro-proyecto" method="post">
+        <div class="row mb-3">
+          <div class="col-4 mb-3">
+            <label for="nombre" class="form-label">Nombre de Proyecto:</label>
+            <input class="form-control" type="text" maxlength="50" id="nombre" name="nombre" value="<%= proyecto.nombre %>">
+          </div>
+          <div class="col-4 mb-3">
+            <label for="descripcion">Descripción:</label>
+            <textarea maxlength="150" class="form-control" id="descripcion" name="descripcion"><%= proyecto.descripcion %></textarea>
+          </div>
+          <div class="col-4 mb-3">
+            <label for="foto">Fotografías:</label>
+            <input class="form-control" type="file" id="foto" name="foto" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 mb-3">
+            <label for="autores">Autores:</label>
+            <input class="form-control" type="text" maxlength="150" id="autores" name="autores" value="<%= proyecto.autores %>">
+          </div>
+          <div class="col-4 mb-3">
+            <label for="evidencia">Evidencias:</label>
+            <input class="form-control" type="text" maxlength="200" id="evidencia" name="evidencia" value="<%= proyecto.evidencia %>">
+            <div id="evidenciaHelp" class="form-text">
+              Copia y pega la url de la evidencia de tu proyecto, que previenmente subiste a un drive. 
+            </div>
+          </div>
+        </div>
+          
+          <button class="btn btn-success" type="submit">Guardar</button>
+      </form>
+    </section>
+      
+    <script src="scripts/actualizar-proyecto.js"></script>
+  </body>
+</html>

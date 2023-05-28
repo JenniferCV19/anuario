@@ -1,0 +1,25 @@
+<%- include('partials/head'); %>
+	<section class="m-2">
+		<%- include('partials/mensaje'); %>
+		<div class="row">
+		<% if(alumnos !== 'undefined'){ %>
+		<% alumnos.forEach(alumno => { %>
+				<div class="col-3">
+					<div class="card m-2" style="width: 14rem;">
+						<img class="card-img-top" src="<%=alumno.fotografia %> " alt="<%= alumno.nombre+' '+alumno.apellidos %>" style="height: 14rem;">
+						<div class="card-body text-center">
+							<h2 class="card-title d-inline-block text-truncate" style="font-size: 1.5rem;"><%= alumno.nombre+' '+alumno.apellidos %></h2>
+							<a class="btn btn-primary m-2" href="/inf-alumno?id=<%=alumno.id %>">Ver información</a>
+							<% if(typeof rol !== 'undefined' && rol != '' && rol == 'maestro'){ %>
+							<a class="btn btn-success m-2" href="/editar-alumno?id=<%=alumno.id %>">Editar</a>
+							<a class="btn btn-danger m-2" href="/eliminar-alumno?id=<%=alumno.id %>">Eliminar</a>
+							<% } %>
+						</div>
+					</div>
+				</div>
+		<% }) %>
+		<% } %>
+		</div>
+	</section>
+</body>
+</html>

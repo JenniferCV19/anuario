@@ -1,0 +1,99 @@
+<%- include('partials/head'); %>
+    <section class="position-relative">
+      <h1 class="m-3">Registro en Anuario</h1>
+      <% if(typeof alumno != 'undefined' && alumno != '') { %>
+      <form class="m-4" id="editar-alumno" method="post">
+      <% } else { %>
+      <form class="m-4" id="registro-anuario" method="post">
+      <% } %>
+        <div class="row mb-3">
+          <div class="col-4 mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <% if(typeof nombre != 'undefined' && nombre != '') { %>
+            <input class="form-control" type="text" maxlength="30" id="nombre" name="nombre" placeholder="Ingresa tu nombre" value="<%= nombre %>" disabled required>
+            <% } else {%>
+            <input class="form-control" type="text" maxlength="30" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+            <% } %>
+          </div>
+          <div class="col-4 mb-3">
+            <label for="apellidos" class="form-label">Apellidos:</label>
+            <% if(typeof apellidos != 'undefined' && apellidos != '') { %>
+            <input class="form-control" type="text" maxlength="30" id="apellidos" name="apellidos" placeholder="Ingresa tus apellidos" value="<%= apellidos %>" disabled required>
+            <% } else { %>
+            <input class="form-control" type="text" maxlength="30" id="apellidos" name="apellidos" placeholder="Ingresa tus apellidos" required>
+            <% } %>
+          </div>
+          <di class="col-4 mb-3">
+            <label for="correo" class="form-label">Correo electrónico:</label>
+            <% if(typeof correo != 'undefined') { %>
+            <input class="form-control" type="email" maxlength="50" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" value="<%= correo %>" disabled required>
+            <% } else { %>
+            <input class="form-control" type="email" maxlength="50" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required>
+            <% } %>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 mb-3">
+            <label for="intereses" class="form-label">Intereses:</label>
+            <% if(typeof alumno != 'undefined' && alumno != '') { %>
+            <textarea maxlength="150" class="form-control" id="intereses" name="intereses" placeholder="Escribe tus intereses"><%= alumno.intereses %></textarea>
+            <% } else { %>
+            <textarea maxlength="150" class="form-control" id="intereses" name="intereses" placeholder="Escribe tus intereses"></textarea>
+            <% } %>
+          </div>
+          <div class="col-6 mb-3">  
+            <label for="habilidades" class="form-label">Habilidades:</label>
+            <% if(typeof alumno != 'undefined' && alumno != '') { %>
+            <textarea maxlength="150" class="form-control" id="habilidades" name="habilidades" placeholder="Escribe tus habilidades"><%= alumno.habilidades %></textarea>
+            <% } else { %>
+            <textarea maxlength="150" class="form-control" id="habilidades" name="habilidades" placeholder="Escribe tus habilidades"></textarea>
+            <% } %>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 mb-3">
+            <label for="objetivosCorto" class="form-label">Objetivos a Corto Plazo:</label>
+            <% if(typeof alumno != 'undefined' && alumno != '') { %>
+            <textarea maxlength="150" class="form-control" id="objetivosCorto" name="objetivosCorto" placeholder="Escribe tus objetivos"><%= alumno.objetivosCorto %></textarea>
+            <% } else { %>
+            <textarea maxlength="150" class="form-control" id="objetivosCorto" name="objetivosCorto" placeholder="Escribe tus objetivos"></textarea>
+            <% } %>
+          </div>
+          <div class="col-6 mb-3">
+            <label for="objetivosLargo" class="form-label">Objetivos a Largo Plazo:</label>
+            <% if(typeof alumno != 'undefined' && alumno != '') { %>
+            <textarea maxlength="150" class="form-control" id="objetivosLargo" name="objetivosLargo" placeholder="Escribe tus objetivos"><%= alumno.objetivosLargo %></textarea>
+            <% } else { %>
+            <textarea maxlength="150" class="form-control" id="objetivosLargo" name="objetivosLargo" placeholder="Escribe tus objetivos"></textarea>
+            <% } %>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6 mb-3">
+            <label for="comentarios" class="form-label">Comentarios:</label>
+            <% if(typeof alumno != 'undefined' && alumno != '') { %>
+            <textarea maxlength="150" class="form-control" id="comentarios" name="comentarios" placeholder="Escribe tus comentarios"><%= alumno.comentarios %></textarea>
+            <% } else { %>
+            <textarea maxlength="150" class="form-control" id="comentarios" name="comentarios" placeholder="Escribe tus comentarios"></textarea>
+            <% } %>
+          </div>
+          <div class="col-6 mb-3">
+            <label for="foto" class="form-label">Fotografía:</label>
+            <input class="form-control" type="file" id="foto" name="foto" accept="image/*" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="mb-3 col-5"></div>
+          <div class="mb-3 col-2">
+            <button class="btn btn-success" type="submit">Ingresar Información</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </body>
+  <% if(typeof alumno != 'undefined' && alumno != '') { %>
+  <script src="scripts/actualizar-alumno.js"></script>
+  <% } else { %>
+  <script src="scripts/registrar-alumno.js"></script>
+  <% } %>
+</html>

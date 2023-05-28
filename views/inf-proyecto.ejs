@@ -1,0 +1,23 @@
+<%- include('partials/head'); %>
+    <div class="proyecto m-2">
+      <div class="row text-center">
+        <div class="d-flex justify-content-center col-12">
+          <img class="img-fluid img-thumbnail" style="max-width: 15rem;" src="<%= proyecto.fotografia %>" alt="Imagen del proyecto">
+        </div>
+        <div class="d-flex justify-content-center col-12">
+          <h1><%= proyecto.nombre %></h1>
+        </div>
+      </div>
+      <div class="row text-center bg-light m-3">
+        <h2>Descripción:</h2>
+        <p class="d-inline-block"><%= proyecto.descripcion %></p>
+        <h2>Autores:</h2>
+        <p class="d-inline-block"><%= proyecto.autores %></p>
+        <h2>Evidencias:</h2>
+        <a href="<%= proyecto.evidencia %>" target="_blank">Proyecto <%= proyecto.nombre %></a>
+      </div>
+    </div>
+  <script src="scripts/bootstrap.bundle.min.js"></script>
+  </section>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<%if(typeof mensaje !== 'undefined' && mensaje != ''){ %>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-3">
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="mensaje">
+                <%= mensaje %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+<% } %>

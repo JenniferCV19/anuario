@@ -1,0 +1,28 @@
+<%- include('partials/head'); %>
+	<section class="m-2">
+		<%- include('partials/mensaje'); %>
+		<div class="row">
+		<% if(proyectos !== 'undefined'){ %>
+		<% proyectos.forEach(proyecto => { %>
+				<div class="col-3">
+					<div class="card m-2" style="width: 14rem;">
+						<img class="card-img-top" src="<%=proyecto.fotografia %> " alt="<%= proyecto.nombre %>" style="height: 14rem;">
+						<div class="card-body text-center">
+							<h2 class="card-title" style="font-size: 1.5rem;"><%= proyecto.nombre %></h2>
+							<a class="btn btn-primary m-2" href="/inf-proyecto?id=<%=proyecto.id %>">Ver información</a>
+							<% if(typeof rol !== 'undefined' && rol != '' && typeof usuario !== 'undefined' && usuario != '' && rol == 'alumno' && proyecto.creado_por == usuario){ %>
+							<a class="btn btn-success m-2" href="/editar-proyecto?id=<%=proyecto.id %>">Editar</a>
+							<a class="btn btn-danger m-2" href="/eliminar-proyecto?id=<%=proyecto.id %>">Eliminar</a>
+							<% } else if(typeof rol !== 'undefined' && rol != '' && rol == 'maestro') { %>
+								<a class="btn btn-success m-2" href="/editar-proyecto?id=<%=proyecto.id %>">Editar</a>
+								<a class="btn btn-danger m-2" href="/eliminar-proyecto?id=<%=proyecto.id %>">Eliminar</a>
+							<% } %>
+						</div>
+					</div>
+				</div>
+		<% }) %>
+		<% } %>
+		</div>
+	</section>
+</body>
+</html>

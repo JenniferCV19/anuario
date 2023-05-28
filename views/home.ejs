@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Inicio de sesión</title>
+	<link rel="icon" href="imagenes/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link rel="stylesheet" href="css/inicio_sesion.css">
+</head>
+<body>
+	<section>
+		<div id="title">
+			<h1>Iniciar sesión</h1>
+		</div>
+		<%- include('partials/mensaje'); %>
+    	<form method="post" action="login">
+      		<label for="username">Correo electrónico:</label>
+      		<input type="email" id="username" name="email" placeholder="Ingresa tu email" required autocomplete="off">
+
+      		<label for="password">Contraseña:</label>
+      		<input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required autocomplete="off">
+			<div class="m-2">
+				<button type="submit">Iniciar sesión</button>
+				<a id="nueva_cuenta" href="/registro-usuario" target="_self">No tengo cuenta</a>
+			</div>
+    	</form>
+	</section>
+</body>
+</html>

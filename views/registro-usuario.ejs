@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Inicio de sesión</title>
+	<link rel="icon" href="imagenes/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link rel="stylesheet" href="css/inicio_sesion.css">
+</head>
+<body>
+    <section>
+      <h1>Registro de Usuarios</h1>
+      <form method="post" action="crear-usuario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" maxlength="30" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" maxlength="30" id="apellidos" name="apellidos" placeholder="Ingresa tus apellidos" required>
+        
+        <label for="apellidos">Tipo de usuario:</label>
+        <select name="tipo_usuario">
+          <option value="alumno" selected>Alumno</option>
+          <option value="maestro">Maestro</option>
+        </select>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" maxlength="50" id="username" name="correo" placeholder="Ingresa tu correo electrónico" required>
+
+        <label for="correo">Contraseña:</label>
+        <input type="password" maxlength="10" id="pass" name="pass" placeholder="Ingresa tu contraseña" required>
+
+        <button type="submit">Registrar</button>
+        <a id="inicio_sesion" href="/" target="_self">Ya tengo una cuenta</a>
+      </form>
+  </section>
+  </body>
+</html>
